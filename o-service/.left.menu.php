@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Вакансии", 
+		"/o-service/vakansii1/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/o-service/kontakty1", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/o-service/novosti1/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Агенты", 
+		"/o-service/agenty1/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -1,4 +1,14 @@
 <?
+$PERM["kabinet-prodavtsa"]["2"]="D";
+$PERM["kabinet-prodavtsa"]["3"]="D";
+$PERM["kabinet-prodavtsa"]["4"]="D";
+$PERM["kabinet-prodavtsa"]["6"]="D";
+$PERM["kabinet-prodavtsa"]["5"]="D";
+$PERM["kabinet-pokupatelya"]["2"]="D";
+$PERM["kabinet-pokupatelya"]["3"]="D";
+$PERM["kabinet-pokupatelya"]["4"]="D";
+$PERM["kabinet-pokupatelya"]["7"]="D";
+$PERM["kabinet-pokupatelya"]["5"]="D";
 $PERM["video"]["*"]="R";
 $PERM["online"]["*"]="R";
 $PERM["desktop_app"]["*"]="R";
