@@ -1,0 +1,31 @@
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [TEXT] => Обратная связь
+                    [LINK] => /o-service/kontakty1/obratnaya-svyaz1/index.php
+                    [SELECTED] => 
+                    [PERMISSION] => X
+                    [ADDITIONAL_LINKS] => Array
+                        (
+                        )
+
+                    [ITEM_TYPE] => P
+                    [ITEM_INDEX] => 0
+                    [PARAMS] => Array
+                        (
+                        )
+
+                    [DEPTH_LEVEL] => 1
+                    [IS_PARENT] => 
+                )
+
+        )
+
+    [1] => Array
+        (
+        )
+
+)
