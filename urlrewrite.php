@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/kabinet-prodavtsa/moi-obyavleniya/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  11 => 
   array (
     'CONDITION' => '#^/o-service/vakansii1/#',
     'RULE' => '',

@@ -20,7 +20,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "/o-service/novosti1/#CODE#/",
+		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
