@@ -4,7 +4,7 @@ $aMenuLinks = Array(
 		"Вакансии", 
 		"/o-service/vakansii1/", 
 		Array(), 
-		Array(), 
+		Array("CACHE_SELECTED_ITEMS"=>"Y"), 
 		"" 
 	),
 	Array(
@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Агенты", 
-		"", 
+		"/o-service/agenty.php", 
 		Array(), 
 		Array(), 
 		"" 

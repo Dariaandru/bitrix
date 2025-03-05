@@ -12,7 +12,7 @@ $aMenuLinksExt=$APPLICATION->IncludeComponent("bitrix:menu.sections", "", array(
 	"IBLOCK_ID" => "#PRODUCTS_IBLOCK_ID#",
 	"DEPTH_LEVEL" => "1",
 	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "36000000"
+	"CACHE_TIME" => "36000000",
 	),
 	false
 );
