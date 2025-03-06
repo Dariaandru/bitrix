@@ -63,15 +63,16 @@ $APPLICATION->SetTitle("Мебельная компания");
 );?></h3>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line",
-	"",
+	".default",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "300",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array(),
+		"FIELD_CODE" => array(0=>"",1=>"",),
+		"IBLOCKS" => array(0=>"2",),
 		"IBLOCK_TYPE" => "news",
 		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
