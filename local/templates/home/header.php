@@ -3,7 +3,7 @@
 IncludeTemplateLangFile(__FILE__);
 ?>
 <!DOCTYPE html>
-<html lang="<?=$LANGUAGE_ID?>">
+<html lang="<?=LANGUAGE_ID?>">
 
 <head>
   <title>HomeSpace &mdash; Colorlib Website Template</title>
