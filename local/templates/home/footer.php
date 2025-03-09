@@ -2,17 +2,51 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <div class="mb-5">
+          <!-- <div class="mb-5">
             <h3 class="footer-heading mb-4">About HomeSpace</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
               consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
               minus odio!</p>
-          </div>
+          </div> -->
 
+          <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/local/templates/home/footer_includes/about.php"
+	)
+);?>
 
 
         </div>
+
+        
+
+
+
         <div class="col-lg-4 mb-5 mb-lg-0">
+           <!-- компонент верхнее меню -->
+
+         <?$APPLICATION->IncludeComponent(
+                  "bitrix:menu",
+                  "",
+                  Array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "3",
+                    "MENU_CACHE_GET_VARS" => array(""),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "top",
+                    "USE_EXT" => "N"
+                  )
+                );?>
+                  <!-- /компонент верхнее меню -->
           <div class="row mb-5">
             <div class="col-md-12">
               <h3 class="footer-heading mb-4">Navigations</h3>
@@ -38,7 +72,7 @@
 
         </div>
 
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <!-- <div class="col-lg-4 mb-5 mb-lg-0">
           <h3 class="footer-heading mb-4">Follow Us</h3>
 
           <div>
@@ -50,19 +84,43 @@
 
 
 
-        </div>
+        </div> -->
+
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/local/templates/home/footer_includes/follow.php"
+	)
+);?>
+
 
       </div>
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          <!-- <p>
+            Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             Copyright &copy;</script>
             <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
             <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
               target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
+            Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          </p> -->
+
+          <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"PATH" => "/local/templates/home/footer_includes/copyright.php"
+	)
+);?>
+
         </div>
 
       </div>
