@@ -6,7 +6,9 @@ IncludeTemplateLangFile(__FILE__);
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-  <title>HomeSpace &mdash; Colorlib Website Template</title>
+<?$APPLICATION->SetTitle("HomeSpace &mdash; Colorlib Website Template")?>
+  <!-- HomeSpace &mdash; Colorlib Website Template -->
+  <title><?$APPLICATION->ShowTitle()?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <?$APPLICATION->ShowHead();?>
@@ -139,26 +141,25 @@ IncludeTemplateLangFile(__FILE__);
 
                   <!-- компонент верхнее меню -->
 
-                  <?$APPLICATION->IncludeComponent(
-                  "bitrix:menu",
-                  "",
-                  Array(
-                    "ALLOW_MULTI_SELECT" => "N",
-                    "CHILD_MENU_TYPE" => "left",
-                    "DELAY" => "N",
-                    "MAX_LEVEL" => "3",
-                    "MENU_CACHE_GET_VARS" => array(""),
-                    "MENU_CACHE_TIME" => "3600",
-                    "MENU_CACHE_TYPE" => "N",
-                    "MENU_CACHE_USE_GROUPS" => "Y",
-                    "ROOT_MENU_TYPE" => "top",
-                    "USE_EXT" => "N"
-                  )
-                );?>
+                  <?$APPLICATION->IncludeComponent("bitrix:menu", "top_multi", Array(
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "3",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"COMPONENT_TEMPLATE" => "horizontal_multilevel"
+	),
+	false
+);?>
                   <!-- /компонент верхнее меню -->
 
                   <!-- меню -->
-              <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <!-- <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active">
                   <a href="index.html">Home</a>
                 </li>
@@ -181,7 +182,7 @@ IncludeTemplateLangFile(__FILE__);
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-              </ul>
+              </ul> -->
                   <!-- /меню -->
 
             </nav>

@@ -3,36 +3,29 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Home", 
+		"Buy", 
 		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Properties", 
-		"/properties/", 
+		"Rent", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Blog", 
-		"blog.html", 
+		"Lease", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"About", 
-		"about.html", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Contact", 
-		"contact.html", 
+		"Menu", 
+		"/properties/menu/", 
 		Array(), 
 		Array(), 
 		"" 
