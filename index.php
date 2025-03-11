@@ -188,26 +188,86 @@ data-stellar-background-ratio="0.5">
 		</div>
 	</div>
 </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
+<?
+$arParams["PROPERTY_CODE"] = array(
+    "PRICE",
+    "SQUARE",
+    "FLOORS", 
+    "BATHROOMS",
+    "PROPERTY_GARAGE"
+);
+
+
+
+
+$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	"properties", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "172800",
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("",""),
-		"IBLOCKS" => array(),
-		"IBLOCK_TYPE" => "news",
-		"NEWS_COUNT" => "9",
+
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+			28 => "PROPERTY_DEAL",
+			29 => "PROPERTY_PRICE",
+			30 => "PROPERTY_LINKS",
+			31 => "PROPERTY_SQUARE",
+			32 => "PROPERTY_FLOORS",
+			33 => "PROPERTY_BATHROOMS",
+			34 => "PROPERTY_GARAGE",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "PROPERTY_DEAL",
+			1 => "PROPERTY_PRICE",
+			2 => "PROPERTY_LINKS",
+			3 => "PROPERTY_SQUARE",
+			4 => "PROPERTY_FLOORS",
+			5 => "PROPERTY_BATHROOMS",
+			6 => "PROPERTY_GARAGE",
+		),
+		"IBLOCKS" => array(
+		),
+		"IBLOCK_TYPE" => "announcements",
+		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
-	)
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "properties"
+	),
+	false
 );?>
-<div class="site-section site-section-sm bg-light">
+<!-- <div class="site-section site-section-sm bg-light">
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-12">
@@ -394,33 +454,38 @@ data-stellar-background-ratio="0.5">
 			</div>
 		</div>
 	</div>
-</div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	".default", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "7776000",
-		"CACHE_TYPE" => "A",
-		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+</div> -->
+<?$APPLICATION->IncludeComponent("bitrix:news.line", "services", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "7776000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
+		"FIELD_CODE" => array(	// Поля
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			8 => "DETAIL_TEXT",
+			9 => "PROPERTY_LINK",
 		),
-		"IBLOCKS" => array(
+		"PROPERTY_CODE" => array(
+			0 => "PROPERTY_LINK",
 		),
-		"IBLOCK_TYPE" => "services",
-		"NEWS_COUNT" => "6",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"COMPONENT_TEMPLATE" => ".default"
+		"IBLOCKS" => "",	// Код информационного блока
+		"IBLOCK_TYPE" => "services",	// Тип информационного блока
+		"NEWS_COUNT" => "6",	// Количество новостей на странице
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+		"COMPONENT_TEMPLATE" => "services"
 	),
 	false
 );?>
-<div class="site-section">
+<!-- <div class="site-section">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-7 text-center mb-5">
@@ -480,19 +545,27 @@ data-stellar-background-ratio="0.5">
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line", 
-	".default", 
+	"blog", 
 	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ACTIVE_DATE_FORMAT" => "Jan 20th, 2019",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "604800",
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
 		"FIELD_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "ID",
+			2 => "CODE",
+			3 => "XML_ID",
+			4 => "NAME",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DATE_ACTIVE_FROM",
+			9 => "",
 		),
 		"IBLOCKS" => array(
 		),
@@ -502,11 +575,11 @@ data-stellar-background-ratio="0.5">
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "blog"
 	),
 	false
 );?>
-<div class="site-section bg-light">
+<!-- <div class="site-section bg-light">
 	<div class="container">
 		<div class="row justify-content-center mb-5">
 			<div class="col-md-7 text-center">
@@ -548,5 +621,5 @@ data-stellar-background-ratio="0.5">
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
