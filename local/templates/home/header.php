@@ -6,7 +6,7 @@ IncludeTemplateLangFile(__FILE__);
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-<?$APPLICATION->SetTitle("HomeSpace &mdash; Colorlib Website Template")?>
+
   <!-- HomeSpace &mdash; Colorlib Website Template -->
   <title><?$APPLICATION->ShowTitle()?></title>
   <meta charset="utf-8">

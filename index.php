@@ -5,10 +5,11 @@ $APPLICATION->SetPageProperty("title", "HomeSpace — Colorlib Website Template"
 
 $APPLICATION->SetTitle("HomeSpace — Colorlib Website Template ");
 ?><!-- компонент лента новостей --> <?
-$arFilter = array(
-  "DEAL" => "Y"
-);
 
+
+
+global $arFilter;
+$GLOBALS['arFilter'] = array("PROPERTY_DEAL_VALUE" => "да");
 
 
 $APPLICATION->IncludeComponent("bitrix:news.list", "slider", Array(
@@ -32,10 +33,14 @@ $APPLICATION->IncludeComponent("bitrix:news.list", "slider", Array(
 		"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
 		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
 		"FIELD_CODE" => array(	// Поля
-			0 => "",
+			0 => "DEAL",
 			1 => "",
 		),
 		"FILTER_NAME" => "arFilter",	// Фильтр
+		"FILTER_PROPERTY_CODE" => array(
+		0 => "DEAL",
+		1 => "",
+	),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
 		"IBLOCK_ID" => "1",	// Код информационного блока
 		"IBLOCK_TYPE" => "announcements",	// Тип информационного блока (используется только для проверки)
