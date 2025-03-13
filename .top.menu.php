@@ -1,5 +1,3 @@
-
-
 <?
 $aMenuLinks = Array(
 	Array(
@@ -25,14 +23,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"About", 
-		"about.html", 
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Contact", 
-		"contact.html", 
+		"/contacts/", 
 		Array(), 
 		Array(), 
 		"" 
