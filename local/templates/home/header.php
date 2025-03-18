@@ -5,9 +5,9 @@ IncludeTemplateLangFile(__FILE__);
 <!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID?>">
 
-<head>
 
-  <!-- HomeSpace &mdash; Colorlib Website Template -->
+
+<head>
   <title><?$APPLICATION->ShowTitle()?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
