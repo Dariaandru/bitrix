@@ -1,8 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "HomeSpace — Colorlib Website Template");
-
-
 $APPLICATION->SetTitle("Home");
 ?><!-- компонент лента новостей --> <?
 
