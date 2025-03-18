@@ -29,7 +29,7 @@ foreach($arResult as $arItem):?>
 		<?if ($arItem["PERMISSION"] > "D"):?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-    <li <?if ($arItem["SELECTED"] ): ?> class="active"<?endif?>>
+    <li <?if ($arItem["SELECTED"] ): ?> class="active "<?endif?>>
         <a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>active<?endif?>">
             <span><?=$arItem["TEXT"]?></span>
         </a>

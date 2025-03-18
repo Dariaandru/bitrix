@@ -39,7 +39,7 @@ $this->setFrameMode(true);
 			<strong>$<?=$arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"]?></strong>
 		</p>
 		<p class="mb-0">
-			<a href="<?=$arItem["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"][0]?>" class="text-uppercase small letter-spacing-1 font-weight-bold">More Details</a>
+			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="text-uppercase small letter-spacing-1 font-weight-bold"><?=GetMessage('MORE_DETAILS')?></a>
 		</p>
 	</div>
 </div>

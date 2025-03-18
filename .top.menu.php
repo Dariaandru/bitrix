@@ -1,36 +1,36 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Home", 
+		"Главная", 
 		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
+	// Array(
+	// 	"Объявления", 
+	// 	"/properties/", 
+	// 	Array(), 
+	// 	Array(), 
+	// 	"" 
+	// ),
 	Array(
-		"Properties", 
-		"/properties/", 
+		"О сервисе", 
+		"/o-service/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Blog", 
-		"blog.html", 
+		"ЛК продавца", 
+		"/kabinet-prodavtsa/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"About", 
-		"/about/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Contact", 
-		"/contacts/", 
+		"ЛК покупателя", 
+		"/kabinet-pokupatelya/", 
 		Array(), 
 		Array(), 
 		"" 

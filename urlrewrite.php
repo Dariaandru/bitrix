@@ -32,7 +32,7 @@ $arUrlRewrite=array (
     'PATH' => '/o-service/vakansii1/index.php',
     'SORT' => 100,
   ),
-  6 => 
+  13 => 
   array (
     'CONDITION' => '#^/o-service/novosti1/#',
     'RULE' => '',
