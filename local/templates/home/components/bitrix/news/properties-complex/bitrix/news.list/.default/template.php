@@ -117,8 +117,15 @@ $this->setFrameMode(true);
 			<div class="col-12">
 				<div class="site-section-title">
 					<!-- <h2>New Properties for You</h2> -->
-					<h2><?=GetMessage('HEADER_PROPERTIES') ?></h2>
-
+          
+          <? if (isset($arParams["CUSTOM_TITLE"])): ?>
+            <h2><?=$arParams["CUSTOM_TITLE"]?></h2>
+            <!-- <h2><?=GetMessage('MY_ANNOUNSEMENTS') ?></h2> -->
+            <?else:?>
+					<h2> 
+            <?=GetMessage('HEADER_PROPERTIES') ?>
+          </h2>
+          <?endif;?>
 					 <br>
 				</div>
 			</div>

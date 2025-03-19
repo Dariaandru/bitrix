@@ -16,14 +16,6 @@ $arUrlRewrite=array (
     'PATH' => '/desktop_app/router.php',
     'SORT' => 100,
   ),
-  10 => 
-  array (
-    'CONDITION' => '#^/kabinet-prodavtsa/moi-obyavleniya/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/kabinet-prodavtsa/moi-obyavleniya/index.php',
-    'SORT' => 100,
-  ),
   11 => 
   array (
     'CONDITION' => '#^/o-service/vakansii1/#',
@@ -56,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/obyavleniya/index.php',
     'SORT' => 100,
   ),
-  12 => 
+  14 => 
   array (
     'CONDITION' => '#^/properties/#',
     'RULE' => '',

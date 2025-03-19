@@ -28,6 +28,11 @@ $arTemplateParameters = array(
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
 	),
+	"CUSTOM_TITLE" => Array(
+		"NAME" => "Пользовательский заголовок",
+		"TYPE" => "STRING",
+		"DEFAULT" => "Мои объявления",
+	),
 );
 
 if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
@@ -46,6 +51,13 @@ if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
 		"MULTIPLE" => "N",
 		"COLS" => 25,
 		"REFRESH"=> "Y",
+	);
+
+	$arTemplateParameters["CUSTOM_TITLE"] = array(
+		"NAME" => "Пользовательский заголовок",
+		"TYPE" => "STRING",
+		"DEFAULT" => "",
+		"PARENT" => "ADDITIONAL_SETTINGS",
 	);
 
 	$shareComponentTemplate = (trim((string)($arCurrentValues["SHARE_TEMPLATE"] ?? '')));
@@ -76,5 +88,12 @@ if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
 		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_SHARE_SHORTEN_URL_KEY"),
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
+	);
+
+	$arTemplateParameters["CUSTOM_TITLE"] = array(
+		"NAME" => "Пользовательский заголовок",
+		"TYPE" => "STRING",
+		"DEFAULT" => "",
+		"PARENT" => "ADDITIONAL_SETTINGS",
 	);
 }

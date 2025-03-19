@@ -28,7 +28,6 @@ $APPLICATION->SetTitle("Properties");
 		"DETAIL_PROPERTY_CODE" => array("BATHROOMS","FLOORS","GARAGE","SQUARE","DEAL","LINKS","PRICE","GALLERY",""),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"PAGER_TEMPLATE" => "numeric_only",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
@@ -55,7 +54,7 @@ $APPLICATION->SetTitle("Properties");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_FOLDER" => "/properties/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"#SITE_DIR#/properties","section"=>""),
+		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"/kabinet-prodavtsa/moi-obyavleniya/","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -72,6 +71,6 @@ $APPLICATION->SetTitle("Properties");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N"
+		"USE_SHARE" => "N",
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
