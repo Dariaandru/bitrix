@@ -4,10 +4,9 @@ $APPLICATION->SetTitle("Мои объявления");
 
 
 // Создаем массив с фильтром по текущему пользователю
-$arFilter = array(
-    "CREATED_BY" => $GLOBALS['USER']->GetID()
-);
 
+global $filterName;
+$GLOBALS['filterName'] = array("CREATED_BY" => $GLOBALS['USER']->GetID());
 
 
 
@@ -46,7 +45,8 @@ $arFilter = array(
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FILTER_NAME" => "arFilter",
+		"FILTER_NAME" => 'filterName',
+
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "1",
 		"IBLOCK_TYPE" => "announcements",
