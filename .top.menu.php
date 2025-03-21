@@ -7,13 +7,13 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
-	// Array(
-	// 	"Объявления", 
-	// 	"/properties/", 
-	// 	Array(), 
-	// 	Array(), 
-	// 	"" 
-	// ),
+	Array(
+		"Объявления", 
+		"/properties/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
 	Array(
 		"О сервисе", 
 		"/o-service/", 

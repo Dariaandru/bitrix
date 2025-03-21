@@ -20,6 +20,7 @@ $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
 	[
+		"DISPLAY_BACK_BUTTON" => "N",
 		"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
 		"DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
 		"DISPLAY_PICTURE" => $arParams["DISPLAY_PICTURE"],

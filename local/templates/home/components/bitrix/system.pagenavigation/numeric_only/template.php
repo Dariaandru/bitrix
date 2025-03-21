@@ -24,26 +24,26 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
             
             for ($i = 1; $i <= min($pagesToShow, $totalPages); $i++) {
                 if ($i == $currentPage) {
-                    ?><a href="#" class="active"><?=$i?></a><?
+                    ?><a href="#" class="active"><?=$i?></a> <?php
                 } else {
-                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$i?>"><?=$i?></a><?
+                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$i?>"><?=$i?></a> <?php
                 }
             }
             
             // Show ellipsis if there are more pages
             if ($totalPages > $pagesToShow) {
-                ?><span>...</span><?
+                ?><span>...</span> <?php
                 
                 // Show the last page
                 if ($currentPage > $pagesToShow && $currentPage < $totalPages) {
                     // Current page is beyond the first 5 and not the last page
-                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$totalPages?>"><?=$totalPages?></a><?
+                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$totalPages?>"><?=$totalPages?></a><?php
                 } else if ($currentPage <= $pagesToShow) {
                     // Current page is among the first 5
-                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$totalPages?>"><?=$totalPages?></a><?
+                    ?><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$totalPages?>"><?=$totalPages?></a><?php
                 } else {
                     // Current page is the last page
-                    ?><a href="#" class="active"><?=$totalPages?></a><?
+                    ?><a href="#" class="active"><?=$totalPages?></a><?php
                 }
             }
             ?>
