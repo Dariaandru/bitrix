@@ -32,17 +32,21 @@
         <div class="col-lg-4 mb-5 mb-lg-0">
            <!-- компонент верхнее меню -->
 
-         <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom", Array(
-	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-		"DELAY" => "N",	// Откладывать выполнение шаблона меню
-		"MAX_LEVEL" => "3",	// Уровень вложенности меню
-		"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-		"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
-		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+         <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"bottom", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "bottom",
+		"USE_EXT" => "N",
 		"COMPONENT_TEMPLATE" => "bottom"
 	),
 	false

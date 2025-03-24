@@ -107,7 +107,8 @@ IncludeTemplateLangFile(__FILE__);
 		"PATH" => "/local/templates/home/socials.php"
 	)
 );?>
-
+ <!-- <a href="/login">Авторизация</a> -->
+ <a href="/login">Авторизация</a>
         </div>
       </div>
 
