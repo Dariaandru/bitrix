@@ -107,13 +107,13 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                             <div class="col-md-12 mb-3 mb-md-0">
                                 <label class="font-weight-bold">Тип пользователя:<span class="text-danger">*</span></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeBuyer" value="buyer" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "buyer" || empty($arResult["VALUES"]["UF_USER_TYPE"])) ? "checked" : ""?>>
+                                    <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeBuyer" value="5" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "buyer" || empty($arResult["VALUES"]["UF_USER_TYPE"])) ? "checked" : ""?>>
                                     <label class="form-check-label" for="userTypeBuyer">
                                         Покупатель
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeSeller" value="seller" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "seller") ? "checked" : ""?>>
+                                    <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeSeller" value="6" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "seller") ? "checked" : ""?>>
                                     <label class="form-check-label" for="userTypeSeller">
                                         Продавец
                                     </label>

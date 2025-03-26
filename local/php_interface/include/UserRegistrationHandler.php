@@ -1,6 +1,8 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
+use \Bitrix\Main\EventManager;
+$eventManager = \Bitrix\Main\EventManager::getInstance();
+$eventManager->AddEventHandler("main", "OnAfterUserRegister", ["UserRegistrationHandler", "onAfterUserRegister"]);
 /**
  * Класс для обработки событий, связанных с регистрацией пользователей
  */
@@ -13,7 +15,7 @@ class UserRegistrationHandler
      * @param array $arFields Массив полей пользователя
      * @return void
      */
-    public static function onAfterUserRegister($arFields)
+    public static function onAfterUserRegister(&$arFields)
     {
         // Проверяем, успешно ли прошла регистрация
         if ($arFields["USER_ID"] > 0) {
@@ -25,6 +27,7 @@ class UserRegistrationHandler
             $rsUser = CUser::GetByID($userId);
             if ($arUser = $rsUser->Fetch()) {
                 $userType = $arUser["UF_USER_TYPE"];
+                // $userType = 'buyer';
             }
             
             // Определяем группу в зависимости от типа пользователя
@@ -36,11 +39,11 @@ class UserRegistrationHandler
             $userGroups = CUser::GetUserGroup($userId);
             
             // Добавляем пользователя в соответствующую группу
-            if ($userType == "buyer") {
+            if ($userType == "5") {
                 if (!in_array($buyerGroupId, $userGroups)) {
                     $userGroups[] = $buyerGroupId;
                 }
-            } elseif ($userType == "seller") {
+            } elseif ($userType == "6") {
                 if (!in_array($sellerGroupId, $userGroups)) {
                     $userGroups[] = $sellerGroupId;
                 }
@@ -60,4 +63,7 @@ class UserRegistrationHandler
 }
 
 // Регистрируем обработчик события
-AddEventHandler("main", "OnAfterUserRegister", ["UserRegistrationHandler", "onAfterUserRegister"]);
+
+
+
+
