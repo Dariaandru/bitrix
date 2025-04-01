@@ -60,7 +60,7 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                         <!-- Login field -->
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
-                                <label class="font-weight-bold" for="LOGIN">Логин (мин. 3 символа):<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold" for="LOGIN"><?=GetMessage("REGISTER_FIELD_LOGIN")?>:<span class="text-danger">*</span></label>
                                 <input size="30" type="text" name="REGISTER[LOGIN]" id="LOGIN" value="<?=$arResult["VALUES"]["LOGIN"]?>" class="form-control" />
                             </div>
                         </div>
@@ -68,7 +68,7 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                         <!-- Email field -->
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
-                                <label class="font-weight-bold" for="EMAIL">Email:<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold" for="EMAIL"><?=GetMessage("REGISTER_FIELD_EMAIL")?>:<span class="text-danger">*</span></label>
                                 <input size="30" type="text" name="REGISTER[EMAIL]" id="EMAIL" value="<?=$arResult["VALUES"]["EMAIL"]?>" class="form-control" />
                             </div>
                         </div>
@@ -76,14 +76,14 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                         <!-- Password field -->
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
-                                <label class="font-weight-bold" for="PASSWORD">Пароль:<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold" for="PASSWORD"><?=GetMessage("REGISTER_FIELD_PASSWORD")?>:<span class="text-danger">*</span></label>
                                 <input size="30" type="password" name="REGISTER[PASSWORD]" id="PASSWORD" value="<?=$arResult["VALUES"]["PASSWORD"]?>" autocomplete="off" class="form-control" />
                                 <?if($arResult["SECURE_AUTH"]):?>
-                                    <span class="bx-auth-secure" id="bx_auth_secure" title="<?echo GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
+                                    <span class="bx-auth-secure" id="bx_auth_secure" title="<?=GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
                                         <div class="bx-auth-secure-icon"></div>
                                     </span>
                                     <noscript>
-                                    <span class="bx-auth-secure" title="<?echo GetMessage("AUTH_NONSECURE_NOTE")?>">
+                                    <span class="bx-auth-secure" title="<?=GetMessage("AUTH_NONSECURE_NOTE")?>">
                                         <div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
                                     </span>
                                     </noscript>
@@ -97,7 +97,7 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                         <!-- Confirm Password field -->
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
-                                <label class="font-weight-bold" for="CONFIRM_PASSWORD">Подтверждение пароля:<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold" for="CONFIRM_PASSWORD"><?=GetMessage("REGISTER_FIELD_CONFIRM_PASSWORD")?>:<span class="text-danger">*</span></label>
                                 <input size="30" type="password" name="REGISTER[CONFIRM_PASSWORD]" id="CONFIRM_PASSWORD" value="<?=$arResult["VALUES"]["CONFIRM_PASSWORD"]?>" autocomplete="off" class="form-control" />
                             </div>
                         </div>
@@ -105,17 +105,17 @@ if($arResult["SHOW_SMS_FIELD"] == true)
                         <!-- Custom User Type field (Buyer/Seller) -->
                         <div class="row form-group">
                             <div class="col-md-12 mb-3 mb-md-0">
-                                <label class="font-weight-bold">Тип пользователя:<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold"><?=GetMessage("REGISTER_FIELD_USER_TYPE")?>:<span class="text-danger">*</span></label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeBuyer" value="5" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "buyer" || empty($arResult["VALUES"]["UF_USER_TYPE"])) ? "checked" : ""?>>
                                     <label class="form-check-label" for="userTypeBuyer">
-                                        Покупатель
+                                        <?=GetMessage("REGISTER_FIELD_USER_TYPE_BUYER")?>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="UF_USER_TYPE" id="userTypeSeller" value="6" <?=($arResult["VALUES"]["UF_USER_TYPE"] == "seller") ? "checked" : ""?>>
                                     <label class="form-check-label" for="userTypeSeller">
-                                        Продавец
+                                        <?=GetMessage("REGISTER_FIELD_USER_TYPE_SELLER")?>
                                     </label>
                                 </div>
                             </div>

@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("registration");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:main.register", 
-	".default", 
+	"registration", 
 	array(
 		"AUTH" => "Y",
 		"REQUIRED_FIELDS" => array(

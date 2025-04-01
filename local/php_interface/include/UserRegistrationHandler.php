@@ -27,13 +27,11 @@ class UserRegistrationHandler
             $rsUser = CUser::GetByID($userId);
             if ($arUser = $rsUser->Fetch()) {
                 $userType = $arUser["UF_USER_TYPE"];
-                // $userType = 'buyer';
             }
             
             // Определяем группу в зависимости от типа пользователя
             $buyerGroupId = 6;  // ID группы "Покупатели" (замените на реальный ID)
             $sellerGroupId = 7; // ID группы "Продавцы" (замените на реальный ID)
-            $registeredGroupId = 2; // ID группы зарегистрированных пользователей
             
             // Текущие группы пользователя
             $userGroups = CUser::GetUserGroup($userId);
@@ -52,17 +50,11 @@ class UserRegistrationHandler
             // Обновляем группы пользователя
             CUser::SetUserGroup($userId, $userGroups);
             
-            // Логирование действия (опционально)
-            AddMessage2Log(
-                "Пользователь ID: {$userId} добавлен в группу как " . 
-                ($userType == "buyer" ? "Покупатель" : "Продавец"),
-                "user_registration"
-            );
         }
     }
 }
 
-// Регистрируем обработчик события
+
 
 
 
