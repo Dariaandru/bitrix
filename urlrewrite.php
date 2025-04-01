@@ -1,5 +1,29 @@
 <?php
 $arUrlRewrite=array (
+  19 => 
+  array (
+    'CONDITION' => '#^/local/templates/.default/components/bitrix/catalog/portfolio/sections.php#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/local/templates/.default/components/bitrix/catalog/portfolio/sections.php',
+    'SORT' => 100,
+  ),
+  20 => 
+  array (
+    'CONDITION' => '#^/local/templates/.default/components/bitrix/catalog/portfolio/section.php#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/local/templates/.default/components/bitrix/catalog/portfolio/section.php',
+    'SORT' => 100,
+  ),
+  21 => 
+  array (
+    'CONDITION' => '#^/local/templates/.default/components/bitrix/catalog/portfolio/element.php#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/local/templates/.default/components/bitrix/catalog/portfolio/element.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/online/([\\.\\-0-9a-zA-Z]+)(/?)([^/]*)#',
@@ -40,12 +64,28 @@ $arUrlRewrite=array (
     'PATH' => '/desktop_app/router.php',
     'SORT' => 100,
   ),
+  22 => 
+  array (
+    'CONDITION' => '#^/s2/portfolio/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/s2/portfolio/index.php',
+    'SORT' => 100,
+  ),
   7 => 
   array (
     'CONDITION' => '#^/obyavleniya/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/obyavleniya/index.php',
+    'SORT' => 100,
+  ),
+  16 => 
+  array (
+    'CONDITION' => '#^/s2/products/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/s2/products/index.php',
     'SORT' => 100,
   ),
   14 => 
@@ -70,6 +110,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/products/index.php',
+    'SORT' => 100,
+  ),
+  17 => 
+  array (
+    'CONDITION' => '#^/s2/news/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/s2/news/index.php',
     'SORT' => 100,
   ),
   2 => 

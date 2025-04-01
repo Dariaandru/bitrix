@@ -36,7 +36,7 @@
 	"bitrix:menu", 
 	"bottom", 
 	array(
-		"ALLOW_MULTI_SELECT" => "N",
+		"ALLOW_MULTI_SELECT" => "Y",
 		"CHILD_MENU_TYPE" => "left",
 		"DELAY" => "N",
 		"MAX_LEVEL" => "3",
@@ -46,7 +46,7 @@
 		"MENU_CACHE_TYPE" => "A",
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "bottom",
-		"USE_EXT" => "N",
+		"USE_EXT" => "Y",
 		"COMPONENT_TEMPLATE" => "bottom"
 	),
 	false

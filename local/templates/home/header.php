@@ -146,7 +146,7 @@ IncludeTemplateLangFile(__FILE__);
 	"bitrix:menu", 
 	"top_multi", 
 	array(
-		"ALLOW_MULTI_SELECT" => "N",
+		"ALLOW_MULTI_SELECT" => "Y",
 		"CHILD_MENU_TYPE" => "left",
 		"DELAY" => "N",
 		"MAX_LEVEL" => "3",
@@ -156,7 +156,7 @@ IncludeTemplateLangFile(__FILE__);
 		"MENU_CACHE_TYPE" => "A",
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N",
+		"USE_EXT" => "Y",
 		"COMPONENT_TEMPLATE" => "top_multi"
 	),
 	false

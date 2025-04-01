@@ -1,6 +1,6 @@
 <?
 $sSectionName = "About";
-$arDirProperties = Array(
+$arDirProperties = array(
    "title" => "About Us"
 );
 ?>
