@@ -94,10 +94,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
         }
 
 
-        /*
-         * Нужно проверить, что заданы значения в $arParams "Время кеширования" и "Количество элементов"
-         * Если не заданы, то указать дефолтные значения
-         */
 
          if (!isset($arParams['CACHE_TIME']) || intval($arParams['CACHE_TIME']) <= 0) {
             $arParams['CACHE_TIME'] = 3600; // Дефолтное значение - 1 час
@@ -125,13 +121,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
     final public function executeComponent(): void
     {
         if (empty($this->arParams["HLBLOCK_TNAME"])) {
-            /**
-             * Если параметр Название таблицы (TABLE_NAME) Highload-блока не задан,
-             * нужно отдать ошибку (Loc::getMessage('MCART_AGENTS_LIST_NOT_HLBLOCK_TNAME')).
-             * Пример как создать ошибку есть выше при проверки подключения модуля "highloadblock"
-             */
 
-             
                 $this->addError(
                     new Error(Loc::getMessage('MCART_AGENTS_LIST_NOT_HLBLOCK_TNAME'), 404)
                 );
@@ -173,17 +163,10 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             $this->cache->endDataCache($this->arResult); // запись arResult в кеш
         }
 
-        /*
-         * Получить Избранных агентов для текущего пользователя записать их в массив $this->arResult['STAR_AGENTS']
-         * Это можно зделать с помощью CUserOptions::GetOption
-         */ 
+        $category = 'mcart_agent';
+        $name = 'options_agents_star';
          $this->arResult['STAR_AGENTS'] = CUserOptions::GetOption($category, $name);
-        /*
-         * Данного метода нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
-         * $category - это категория настройки, можете придумать любую, например mcart_agent
-         * $name - это название настройки, например options_agents_star
-         * Эти настройки храняться в таблице b_user_option
-         */
+
 
 
         $this->IncludeComponentTemplate(); // вызов шаблона компонента
@@ -308,9 +291,6 @@ $nav->allowAllRecords(true)
     'offset' => $nav->getOffset(),
     'limit' => $nav->getLimit(),
         ]);
-
-        $nav->setRecordCount($rsAgents->getCount());
-$arAgents['NAV_OBJECT'] = $nav;
     
         while ($arAgent = $rsAgents->fetch()) {
             /**

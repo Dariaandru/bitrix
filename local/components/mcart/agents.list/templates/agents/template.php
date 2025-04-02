@@ -16,9 +16,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-/*
-* Для постраничной навигации использовать компонент bitrix:main.pagenavigation
-*/
 ?>
 
 
@@ -27,7 +24,7 @@ $this->setFrameMode(true);
         <div class="row mb-5">
           <div class="col-12">
             <div class="site-section-title">
-              <h2>Агенты по Недвижимости</h2>
+              <h2><?=GetMessage('AGENTS_LIST_TITLE')?></h2>
             </div>
           </div>
         </div>
@@ -49,17 +46,17 @@ $this->setFrameMode(true);
                 <div class="agent__card_item">
                     <div class="agent__card_info">
                         <div class="card__info_item">
-                            <div class="position">Электронная почта: </div>
+                            <div class="position"><?=GetMessage('EMAIL')?> </div>
                             <div class="name"><?=$arItem["UF_EMAIL"]?>
                             </div>
                         </div>
                         <div class="card__info_item">
-                            <div class="position">Телефон: </div>
+                            <div class="position"><?=GetMessage('PHONE')?> </div>
                             <div class="name"><?=$arItem["UF_PHONE"]?>
                             </div>
                         </div>
                         <div class="card__info_item">
-                            <div class="position">Вид деятельности:</div>
+                            <div class="position"><?=GetMessage('ACTIVITY')?></div>
                             <div class="name"><?=$arItem["UF_ACTIVITY"]?>
                             </div>
                         </div>
@@ -74,19 +71,6 @@ $this->setFrameMode(true);
 <?endforeach?>
         </div>
         
-        <!-- <div class="row">
-          <div class="col-md-12 text-center">
-            <div class="site-pagination">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <span>...</span>
-              <a href="#">10</a>
-            </div>
-          </div>  
-        </div> -->
 
         <?
 $APPLICATION->IncludeComponent(
@@ -101,6 +85,5 @@ $APPLICATION->IncludeComponent(
 );
 
 ?>
-        
       </div>
     </div>
