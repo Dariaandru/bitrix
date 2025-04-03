@@ -12,13 +12,13 @@ IncludeTemplateLangFile(__FILE__);
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-6">
-                <h4>Поиск</h4>
-                <form action="/s2/search/index.php" method="get">
-                    <div class="search-form">
-                        <input class="input-seach" type="text" name="q">
-                        <input class="button-seach" name="s" type="submit" value="Найти">
-                    </div>
-                </form>
+            <?$APPLICATION->IncludeComponent("bitrix:search.form", "search-form", Array(
+	"PAGE" => "#SITE_DIR#search/",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+		"USE_SUGGEST" => "Y",	// Показывать подсказку с поисковыми фразами
+	),
+	false
+);?>
+
             </div>
         </div>
     </div>

@@ -14,17 +14,26 @@ IncludeTemplateLangFile(__FILE__);
         <div class="row gy-5">
 
             <div class="col-lg-4">
-
-                <div class="service-box">
-                    <div class="services-list">
-                        <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 1</span></a>
-                        <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 2 -
-                                активный</span></a>
-                        <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 3</span></a>
-                        <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 4</span></a>
-                    </div>
-                </div>
-
+<!-- ------------------------------------------- -->
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "left-menu", Array(
+	"ALLOW_MULTI_SELECT" => "Y",	// Разрешить несколько активных пунктов одновременно
+		"CACHE_SELECTED_ITEMS" => "Y",
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "1",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_THEME" => "site",
+		"ROOT_MENU_TYPE" => "left",	// Тип меню для первого уровня
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
+	false
+);?>
+<!-- ------------------------------------------- -->
                 <div class="service-box">
                     <h4>Материалы</h4>
                     <div class="download-catalog">

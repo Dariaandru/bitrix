@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Портфолио");
 $APPLICATION->SetPageProperty("keywords", "Добро пожаловать на сайт компании, лидера в области проминжиниринга");
 $APPLICATION->SetPageProperty("description", "Проминжиниринг, Инженерные услуги");
-// $APPLICATION->SetTitle("Портфолио");
+$APPLICATION->SetTitle("Портфолио");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	"portfolio",
@@ -115,7 +115,7 @@ $APPLICATION->SetPageProperty("description", "Проминжиниринг, Ин
 		"SEF_URL_TEMPLATES" => Array("compare"=>"compare.php?action=#ACTION_CODE#","element"=>"#SECTION_ID#/#ELEMENT_ID#/","section"=>"#SECTION_ID#/","sections"=>"","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
+		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
 		"SHOW_DEACTIVATED" => "N",
 		"SHOW_PRICE_COUNT" => "1",

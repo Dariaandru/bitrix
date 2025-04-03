@@ -20,7 +20,7 @@ $strReturn = '';
 $strReturn .= '<nav class="breadcrumbs"><ol>';
 
 $itemSize = count($arResult);
-for($index = 0; $index < $itemSize; $index++)
+for($index = 0; $index < $itemSize - 1; $index++)
 {
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 
