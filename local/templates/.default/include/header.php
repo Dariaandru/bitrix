@@ -7,14 +7,12 @@ IncludeTemplateLangFile(__FILE__);
 <?require_once($_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/boot.php");?>
 <?define("DEFAULT_TEMPLATE_PATH", '/local/templates/.default');?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?=LANGUAGE_ID?>">
 
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>Компания - шаблон контентной страницы</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
 	<?$APPLICATION->ShowHead();?>
 
 	<?
@@ -27,17 +25,10 @@ IncludeTemplateLangFile(__FILE__);
 	 Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/assets/img/favicon.png");
 	
 	?>
-	<!-- Favicons -->
-	<link href="assets/img/favicon.png" rel="icon">
-	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- Vendor CSS Files -->
-	<!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="assets/vendor/aos/aos.css" rel="stylesheet"> -->
+	<link href="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/favicon.png" rel="icon">
+	<link href="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- Main CSS File -->
-	<!-- <link href="assets/css/main.css" rel="stylesheet"> -->
 </head>
 
 <body class="scrolled">
@@ -69,3 +60,5 @@ IncludeTemplateLangFile(__FILE__);
 
 		</div>
 	</header>
+
+	<main class="main">

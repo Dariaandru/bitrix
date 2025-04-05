@@ -5,7 +5,7 @@ $APPLICATION->SetPageProperty("description", "«Добро пожаловать 
 $APPLICATION->SetTitle("Главная");
 ?>
 
-<main class="main">
+
 
 
 <?$APPLICATION->IncludeComponent(
@@ -42,15 +42,6 @@ $APPLICATION->SetTitle("Главная");
 		"PATH" => "/local/templates/.default/include/main/about.php"
 	)
 );?>
-
-
-
-
-
-
-
-</main>
-
 
 
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

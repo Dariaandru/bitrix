@@ -2,8 +2,8 @@
 <?
 IncludeTemplateLangFile(__FILE__);
 ?>
-
-<?require_once($_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/header.php");?>
+<?define("DEFAULT_TEMPLATE_PATH", '/local/templates/.default');?>
+<?require_once($_SERVER["DOCUMENT_ROOT"] . DEFAULT_TEMPLATE_PATH . "/include/header.php");?>
 <?
 use Bitrix\Main\Application; 
 $page = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
@@ -13,7 +13,6 @@ if ($page !== '/s2/'):
 ?>
 
 
-<main class="main">
 
 <!-- Page Title -->
 <div class="page-title dark-background">

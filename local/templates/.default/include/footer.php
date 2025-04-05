@@ -5,7 +5,7 @@ IncludeTemplateLangFile(__FILE__);
 
 <?require_once($_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/boot.php");?>
 
-
+</main>
 <footer id="footer" class="footer dark-background">
 
 <div class="footer-search">

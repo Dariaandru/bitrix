@@ -1,9 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Контакты");
-$APPLICATION->SetPageProperty("PAGE_TEXT_UNDER_TITLE", "Свяжитесь с нами — мы всегда готовы помочь и ответить на ваши вопросы.");
-$APPLICATION->SetPageProperty("keywords", "Проминжиниринг, Инженерные услуги");
-$APPLICATION->SetPageProperty("description", "Добро пожаловать на сайт компании, лидера в области проминжиниринга");
 $APPLICATION->SetTitle("Контакты");
 ?>
 

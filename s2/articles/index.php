@@ -1,9 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Статьи");
-$APPLICATION->SetPageProperty("PAGE_TEXT_UNDER_TITLE", "Погрузитесь в инновации и передовые идеи с нашими статьями.");
-$APPLICATION->SetPageProperty("keywords", "Проминжиниринг, Инженерные услуги");
-$APPLICATION->SetPageProperty("description", "Добро пожаловать на сайт компании, лидера в области проминжиниринга");
 $APPLICATION->SetTitle("Статьи");
 ?>
 
@@ -15,7 +12,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-1.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-1.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Инновации в инжиниринге</p>
                 <h2 class="title">
@@ -34,7 +31,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-2.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-2.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Тренды 2024 года</p>
                 <h2 class="title">
@@ -53,7 +50,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-3.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-3.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Безопасность на производстве</p>
                 <h2 class="title">
@@ -72,7 +69,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-4.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-4.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Кейс: Успешный проект</p>
                 <h2 class="title">
@@ -91,7 +88,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-5.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-5.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Управление проектами</p>
                 <h2 class="title">
@@ -110,7 +107,7 @@ $APPLICATION->SetTitle("Статьи");
         <div class="col-lg-4">
             <article>
                 <div class="post-img">
-                    <img src="/local/templates/.default/assets/img/articles/blog-6.jpg" alt="" class="img-fluid">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/articles/blog-6.jpg" alt="" class="img-fluid">
                 </div>
                 <p class="post-category">Современные материалы </p>
                 <h2 class="title">

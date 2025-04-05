@@ -5,7 +5,7 @@
 
 		<div class="row gy-4">
 			<div class="col-lg-6 position-relative align-self-start">
-				<img src="/local/templates/.default/assets/img/about.jpg" class="img-fluid" alt="">
+				<img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/about.jpg" class="img-fluid" alt="">
 			</div>
 			<div class="col-lg-6 content"   >
 				<h3>Преимущества и особенности наших инженерных решений.</h3>

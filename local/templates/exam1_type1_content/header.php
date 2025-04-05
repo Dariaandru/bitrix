@@ -2,10 +2,10 @@
 <?
 IncludeTemplateLangFile(__FILE__);
 ?>
+<?define("DEFAULT_TEMPLATE_PATH", '/local/templates/.default');?>
+<?require_once($_SERVER["DOCUMENT_ROOT"] . DEFAULT_TEMPLATE_PATH . "/include/header.php");?>
 
-<?require_once($_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/header.php");?>
 
-<main class="main">
 
 <!-- Conten Page Section -->
 <section class="content-page section">

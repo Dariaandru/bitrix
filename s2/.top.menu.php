@@ -41,6 +41,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Статистика", 
+		"statistic_na/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

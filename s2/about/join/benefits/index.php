@@ -1,9 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Преимущества");
-$APPLICATION->SetPageProperty("PAGE_TEXT_UNDER_TITLE", "Работайте с нами и раскройте свой потенциал в комфортной и поддерживающей  среде.");
-$APPLICATION->SetPageProperty("keywords", "Проминжиниринг, Инженерные услуги");
-$APPLICATION->SetPageProperty("description", "Добро пожаловать на сайт компании, лидера в области проминжиниринга");
 $APPLICATION->SetTitle("Преимущества");
 
 ?>
@@ -31,7 +28,7 @@ $APPLICATION->SetTitle("Преимущества");
     график работы и возможность удаленной работы — это лишь часть того, что мы предлагаем. Мы стремимся
     создать атмосферу, в которой каждый сотрудник чувствует себя частью команды.</p>
 
-<img src="/local/templates/.default/assets/img/content/history_3.jpg" alt="" class="img-fluid services-img">
+<img src="<?=DEFAULT_TEMPLATE_PATH?>/assets/img/content/history_3.jpg" alt="" class="img-fluid services-img">
 
 
 <h2>Социальные гарантии</h2>
