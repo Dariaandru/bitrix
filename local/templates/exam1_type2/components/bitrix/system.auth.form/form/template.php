@@ -6,7 +6,13 @@ CJSCore::Init();
 <li type="none" class="nav-item dropdown pe-3">
 
 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-  <span class="d-none d-md-block dropdown-toggle ps-2"><?=$arResult["USER_LOGIN"]?></span>
+	<? global $USER; ?>
+	<? if ($USER->IsAuthorized()): ?>
+	<span class="d-none d-md-block dropdown-toggle ps-2">
+    	<?=$arResult["USER_LOGIN"]?>
+	</span>
+<? endif; ?>
+
 </a><!-- End Profile Iamge Icon -->
 <form action="<?=$arResult["AUTH_URL"]?>">
 

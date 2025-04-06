@@ -93,9 +93,9 @@ IncludeTemplateLangFile(__FILE__);
             "bitrix:system.auth.form",
             "form",
             Array(
-              "FORGOT_PASSWORD_URL" => "",
+              "FORGOT_PASSWORD_URL" => "/s2/statistic_na/forgot_password.php/",
               "PROFILE_URL" => "/s2/statistic_na/profile/",
-              "REGISTER_URL" => "",
+              "REGISTER_URL" => "/s2/statistic_na/register.php/",
               "SHOW_ERRORS" => "N"
             )
         );?>

@@ -13,15 +13,19 @@ foreach($arResult as $arItem):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
 	<?endif?>
 
-	<?if ($arItem["IS_PARENT"]):?>
+	<?if ($arItem["PERMISSION"] > "D"):?>
 
-			<li class="dropdown">
-				<a href="<?=$arItem["LINK"]?>"><span><?=$arItem["TEXT"]?></span>
-					<i class="bi bi-chevron-down toggle-dropdown"></i>
-				</a>
-				<ul>
-	<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<?if ($arItem["IS_PARENT"]):?>
+
+						<li class="dropdown">
+							<a href="<?=$arItem["LINK"]?>"><span><?=$arItem["TEXT"]?></span>
+								<i class="bi bi-chevron-down toggle-dropdown"></i>
+							</a>
+							<ul>
+				<?else:?>
+							<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<?endif?>
+
 	<?endif?>
 
 	<?$previousLevel = $arItem["DEPTH_LEVEL"];?>

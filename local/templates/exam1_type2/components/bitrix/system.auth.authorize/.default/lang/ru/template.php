@@ -1,9 +1,12 @@
 <?
 $MESS["AUTH_LOGIN_BUTTON"] = "Войти";
-$MESS["AUTH_LOGIN"] = "Логин";
-$MESS["AUTH_PASSWORD"] = "Пароль";
+$MESS["AUTH_LOGIN"] = "Логин:";
+$MESS["ERROR_LOGIN"] = "Укажите логин!";
+$MESS["AUTH_PASSWORD"] = "Пароль:";
+$MESS["ERROR_PASSWORD"] = "Укажите пароль!";
 $MESS["AUTH_REMEMBER_ME"] = "Запомнить меня на этом компьютере";
 $MESS["AUTH_FORGOT_PASSWORD_2"] = "Забыли свой пароль?";
+$MESS["AUTH_FORGOT_PASSWORD"] = "Восстановить";
 $MESS["AUTH_REGISTER"] = "Регистрация";
 $MESS["AUTH_LOGOUT_BUTTON"] = "Выйти";
 $MESS["AUTH_PROFILE"] = "Мой профиль";
@@ -12,7 +15,8 @@ $MESS["AUTH_A_OPENID"] = "OpenID";
 $MESS["AUTH_OPENID"] = "OpenID";
 $MESS["AUTH_A_LIVEID"] = "LiveID";
 $MESS["AUTH_LIVEID_LOGIN"] = "Log In";
-$MESS["AUTH_CAPTCHA_PROMT"] = "Введите слово на картинке";
+$MESS["AUTH_CAPTCHA_PROMT"] = "Код на картинке";
+$MESS["ERROR_CAPTCHA_PROMT"] = "Заполните код";
 $MESS["AUTH_REMEMBER_SHORT"] = "Запомнить меня";
 $MESS["socserv_as_user_form"] = "Войти как пользователь:";
 $MESS["AUTH_SECURE_NOTE"]="Перед отправкой формы авторизации пароль будет зашифрован в браузере. Это позволит избежать передачи пароля в открытом виде.";
@@ -21,4 +25,5 @@ $MESS["auth_form_comp_otp"] = "Одноразовый пароль:";
 $MESS["auth_form_comp_otp_remember_title"] = "Запомнить код на этом компьютере";
 $MESS["auth_form_comp_otp_remember"] = "Запомнить код";
 $MESS["auth_form_comp_auth"] = "Авторизация";
+$MESS["PLEASE_AUTH"] = "Пожалуйста, авторизуйтесь:";
 ?>
