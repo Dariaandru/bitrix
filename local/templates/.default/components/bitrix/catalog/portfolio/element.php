@@ -15,22 +15,6 @@
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
-$this->setFrameMode(true);
-$this->addExternalCss('/bitrix/css/main/bootstrap.css');
-
-if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] == 'Y')
-{
-	$basketAction = (isset($arParams['COMMON_ADD_TO_BASKET_ACTION']) ? array($arParams['COMMON_ADD_TO_BASKET_ACTION']) : array());
-}
-else
-{
-	$basketAction = (isset($arParams['DETAIL_ADD_TO_BASKET_ACTION']) ? $arParams['DETAIL_ADD_TO_BASKET_ACTION'] : array());
-}
-
-$isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEBAR_PATH']));
-?>
-		<?
-
 		$componentElementParams = array(
 			'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
 			'IBLOCK_ID' => $arParams['IBLOCK_ID'],
@@ -69,7 +53,6 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 			'LINK_IBLOCK_ID' => $arParams['LINK_IBLOCK_ID'],
 			'LINK_PROPERTY_SID' => $arParams['LINK_PROPERTY_SID'],
 			'LINK_ELEMENTS_URL' => $arParams['LINK_ELEMENTS_URL'],
-
 			'OFFERS_CART_PROPERTIES' => (isset($arParams['OFFERS_CART_PROPERTIES']) ? $arParams['OFFERS_CART_PROPERTIES'] : []),
 			'OFFERS_FIELD_CODE' => $arParams['DETAIL_OFFERS_FIELD_CODE'],
 			'OFFERS_PROPERTY_CODE' => (isset($arParams['DETAIL_OFFERS_PROPERTY_CODE']) ? $arParams['DETAIL_OFFERS_PROPERTY_CODE'] : []),
@@ -180,26 +163,6 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 			'GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE' => $arParams['GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE'],
 		);
 
-		if (isset($arParams['USER_CONSENT']))
-		{
-			$componentElementParams['USER_CONSENT'] = $arParams['USER_CONSENT'];
-		}
-
-		if (isset($arParams['USER_CONSENT_ID']))
-		{
-			$componentElementParams['USER_CONSENT_ID'] = $arParams['USER_CONSENT_ID'];
-		}
-
-		if (isset($arParams['USER_CONSENT_IS_CHECKED']))
-		{
-			$componentElementParams['USER_CONSENT_IS_CHECKED'] = $arParams['USER_CONSENT_IS_CHECKED'];
-		}
-
-		if (isset($arParams['USER_CONSENT_IS_LOADED']))
-		{
-			$componentElementParams['USER_CONSENT_IS_LOADED'] = $arParams['USER_CONSENT_IS_LOADED'];
-		}
-
 		$elementId = $APPLICATION->IncludeComponent(
 			'bitrix:catalog.element',
 			'',
@@ -208,81 +171,4 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 		);
 		$GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
 
-		if ($elementId > 0)
-		{
-			
-
-			$recommendedData = array();
-			$recommendedCacheId = array('IBLOCK_ID' => $arParams['IBLOCK_ID']);
-
-			$obCache = new CPHPCache();
-			if ($obCache->InitCache(36000, serialize($recommendedCacheId), '/catalog/recommended'))
-			{
-				$recommendedData = $obCache->GetVars();
-			}
-			elseif ($obCache->StartDataCache())
-			{
-				if (Loader::includeModule('catalog'))
-				{
-					$arSku = CCatalogSku::GetInfoByProductIBlock($arParams['IBLOCK_ID']);
-					$recommendedData['OFFER_IBLOCK_ID'] = (!empty($arSku) ? $arSku['IBLOCK_ID'] : 0);
-					$recommendedData['IBLOCK_LINK'] = '';
-					$recommendedData['ALL_LINK'] = '';
-					$rsProps = CIBlockProperty::GetList(
-						array('SORT' => 'ASC', 'ID' => 'ASC'),
-						array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'PROPERTY_TYPE' => 'E', 'ACTIVE' => 'Y')
-					);
-					$found = false;
-					while ($arProp = $rsProps->Fetch())
-					{
-						if ($found)
-						{
-							break;
-						}
-
-						if ($arProp['CODE'] == '')
-						{
-							$arProp['CODE'] = $arProp['ID'];
-						}
-
-						$arProp['LINK_IBLOCK_ID'] = intval($arProp['LINK_IBLOCK_ID']);
-						if ($arProp['LINK_IBLOCK_ID'] != 0 && $arProp['LINK_IBLOCK_ID'] != $arParams['IBLOCK_ID'])
-						{
-							continue;
-						}
-
-						if ($arProp['LINK_IBLOCK_ID'] > 0)
-						{
-							if ($recommendedData['IBLOCK_LINK'] == '')
-							{
-								$recommendedData['IBLOCK_LINK'] = $arProp['CODE'];
-								$found = true;
-							}
-						}
-						else
-						{
-							if ($recommendedData['ALL_LINK'] == '')
-							{
-								$recommendedData['ALL_LINK'] = $arProp['CODE'];
-							}
-						}
-					}
-
-					if ($found)
-					{
-						if (defined('BX_COMP_MANAGED_CACHE'))
-						{
-							global $CACHE_MANAGER;
-							$CACHE_MANAGER->StartTagCache('/catalog/recommended');
-							$CACHE_MANAGER->RegisterTag('iblock_id_'.$arParams['IBLOCK_ID']);
-							$CACHE_MANAGER->EndTagCache();
-						}
-					}
-				}
-
-				$obCache->EndDataCache($recommendedData);
-			}
-
-
-		}
 		?>

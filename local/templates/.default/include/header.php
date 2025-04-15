@@ -22,7 +22,7 @@ IncludeTemplateLangFile(__FILE__);
 	 Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/assets/vendor/bootstrap-icons/bootstrap-icons.css");
 	 Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/assets/vendor/aos/aos.css");
 	 Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/assets/css/main.css");
-	 Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/assets/img/favicon.png");
+
 	
 	?>
 
@@ -37,7 +37,7 @@ IncludeTemplateLangFile(__FILE__);
 	<header id="header" class="header d-flex align-items-center">
 		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-			<a href="#" class="logo d-flex align-items-center">
+			<a href="/s2/" class="logo d-flex align-items-center">
 				<h1 class="sitename"><?=GetMessage('COMPANY_NAME')?></h1>
 			</a>
 

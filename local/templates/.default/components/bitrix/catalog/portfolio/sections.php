@@ -13,8 +13,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
+
 
 $sectionListParams = array(
 	"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
@@ -30,20 +29,13 @@ $sectionListParams = array(
 	"HIDE_SECTION_NAME" => ($arParams["SECTIONS_HIDE_SECTION_NAME"] ?? "N"),
 	"ADD_SECTIONS_CHAIN" => ($arParams["ADD_SECTIONS_CHAIN"] ?? '')
 );
-if ($sectionListParams["COUNT_ELEMENTS"] === "Y")
-{
-	$sectionListParams["COUNT_ELEMENTS_FILTER"] = "CNT_ACTIVE";
-	if ($arParams["HIDE_NOT_AVAILABLE"] == "Y")
-	{
-		$sectionListParams["COUNT_ELEMENTS_FILTER"] = "CNT_AVAILABLE";
-	}
-}
+
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"",
 	$sectionListParams,
-	$component,
-	($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? array("HIDE_ICONS" => "Y") : array())
+	$component
+
 );
 unset($sectionListParams);
 

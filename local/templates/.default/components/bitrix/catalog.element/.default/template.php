@@ -15,10 +15,13 @@ use Bitrix\Catalog\ProductTable;
  * @var string $templateFolder
  */
 
-$this->setFrameMode(true); 
+// $this->setFrameMode(true); 
 
 $APPLICATION->SetPageProperty("title", $arResult["NAME"]);
 $APPLICATION->SetTitle($arResult["NAME"]);
+
+
+
 ?>
 
     <!-- Portfolio Details Section -->
@@ -30,7 +33,8 @@ $APPLICATION->SetTitle($arResult["NAME"]);
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider">
-                  <img src=<?=$arResult["DETAIL_PICTURE"]["SRC"]?> alt="">
+            <?$file = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width' => $arResult["DETAIL_PICTURE"]['WIDTH'], 'height' => $arResult["DETAIL_PICTURE"]['HEIGHT']), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+                  <img src=<?=$file["src"]?> alt="">
             </div>
           </div>
 

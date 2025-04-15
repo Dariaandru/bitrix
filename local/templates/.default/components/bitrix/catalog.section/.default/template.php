@@ -1,8 +1,8 @@
 <?php
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-use Bitrix\Main\Localization\Loc;
-use Bitrix\Catalog\ProductTable;
+// use Bitrix\Main\Localization\Loc;
+// use Bitrix\Catalog\ProductTable;
 
 /**
  * @global CMain $APPLICATION
@@ -42,7 +42,8 @@ $APPLICATION->SetTitle($arResult["NAME"]);
 					<div class="col-lg-4">
 						<article>
 							<div class="post-img">
-								<img src="<?=$item["DETAIL_PICTURE"]["SRC"]?>" alt="" class="img-fluid">
+							<?$file = CFile::ResizeImageGet($item["DETAIL_PICTURE"], array('width' => $item["DETAIL_PICTURE"]['WIDTH'], 'height' => $item["DETAIL_PICTURE"]['HEIGHT']), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+								<img src="<?=$file["src"]?>" alt="" class="img-fluid">
 							</div>
 							<div class="card-body">
 								<h5 class="title"><a href="<?=$item["DETAIL_PAGE_URL"]?>"><?=$item["NAME"]?></a></h5>

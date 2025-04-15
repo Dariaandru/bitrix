@@ -3,11 +3,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Портфолио");
 $APPLICATION->SetTitle("Портфолио");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-	"portfolio",
-	Array(
+	"bitrix:catalog", 
+	"portfolio", 
+	array(
 		"ACTION_VARIABLE" => "action",
-		"ADD_ELEMENT_CHAIN" => "Y",
+		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -27,7 +27,10 @@ $APPLICATION->SetTitle("Портфолио");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "POPUP",
+			1 => "MAGNIFIER",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -55,7 +58,8 @@ $APPLICATION->SetTitle("Портфолио");
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -90,7 +94,12 @@ $APPLICATION->SetTitle("Портфолио");
 		"PAGER_TITLE" => "Products",
 		"PAGE_ELEMENT_COUNT" => "30",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRICE_CODE" => array(),
+		"PRICE_CODE" => array(
+		),
+		"DETAIL_PROPERTY_CODE" => array(
+			"BUSINESS_SECTOR",
+			"CLIENT_NAME"
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -110,7 +119,6 @@ $APPLICATION->SetTitle("Портфолио");
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/s2/portfolio/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"compare.php?action=#ACTION_CODE#","element"=>"#SECTION_ID#/#ELEMENT_ID#/","section"=>"#SECTION_ID#/","sections"=>"","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -147,6 +155,20 @@ $APPLICATION->SetTitle("Портфолио");
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
-		"USE_STORE" => "N"
-	)
+		"USE_STORE" => "N",
+		"COMPONENT_TEMPLATE" => "portfolio",
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_ID#/",
+			"element" => "#SECTION_ID#/#ELEMENT_ID#/",
+			"compare" => "compare.php?action=#ACTION_CODE#",
+			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+		),
+		"VARIABLE_ALIASES" => array(
+			"compare" => array(
+				"ACTION_CODE" => "action",
+			),
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

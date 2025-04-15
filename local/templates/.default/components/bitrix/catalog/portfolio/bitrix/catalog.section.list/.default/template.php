@@ -13,25 +13,26 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true); 
 
-$strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
-$strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
-$arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
 
 ?>
+
 
 <!-- Portfolio Sections -->
 <section class="portfolio-sections section">
 	<div class="container">
 		<div class="row gy-4">
-			<?
-				$this->AddEditAction($arResult['SECTION']['ID'], $arResult['SECTION']['EDIT_LINK'], $strSectionEdit);
-				$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);			
-			?>
+
 		<?foreach ($arResult['SECTIONS'] as &$arSection):?>
 			<div class="col-lg-6">
 				<div class="service-item position-relative">
+					<?$file = CFile::ResizeImageGet(
+						$arSection['PICTURE'], 
+						array('width' => $arSection['PICTURE']['WIDTH'], 
+							'height' => $arSection['PICTURE']['HEIGHT']), 
+							BX_RESIZE_IMAGE_PROPORTIONAL, true
+					);?>
 					<div class="img">
-						<img src="<?=$arSection["PICTURE"]["SRC"]?>" class="img-fluid" alt="">
+						<img src="<?=$file["src"]?>" class="img-fluid" alt="">
 					</div>
 					<div class="details">
 						<a href="<?=$arSection["SECTION_PAGE_URL"]?>">

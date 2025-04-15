@@ -72,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/desktop_app/router.php',
     'SORT' => 100,
   ),
-  22 => 
+  25 => 
   array (
     'CONDITION' => '#^/s2/portfolio/#',
     'RULE' => '',
