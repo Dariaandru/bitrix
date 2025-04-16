@@ -12,13 +12,6 @@ if($arResult["PHONE_REGISTRATION"])
 ?>
 
 
-
-
-
-
-
-
-
 <div class="row justify-content-center">
         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
           <div class="card mb-3">
@@ -99,7 +92,7 @@ if($arResult["PHONE_REGISTRATION"])
                 </div>
       
                 <div class="col-12">
-                  <p class="small"><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>  <!-- GROUP_POLICY / PASSWORD_REQUIREMENTS-->
+                  <p class="small"><?echo substr($arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"], 0, 83);?>.</p>  <!-- GROUP_POLICY / PASSWORD_REQUIREMENTS-->
                 </div>
 
                 <div class="field">

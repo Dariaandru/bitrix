@@ -68,7 +68,7 @@ IncludeTemplateLangFile(__FILE__);
 
   <!-- ======= Sidebar ======= -->
 
-  <aside id="sidebar" class="sidebar">
+
   <?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
 	"menu", 
@@ -91,7 +91,7 @@ IncludeTemplateLangFile(__FILE__);
 
  
 
-  </aside><!-- End Sidebar-->
+
 
   <main id="main" class="main">
 
